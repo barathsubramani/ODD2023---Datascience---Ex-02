@@ -225,7 +225,7 @@ c3=id.sepal_width.quantile(0.75)
 iq=c3-c1
 print(c3)
 
-![MODEL]()
+![MODEL](https://github.com/barathsubramani/ODD2023---Datascience---Ex-02/blob/main/Screenshot%202023-09-01%20221938.png)
 
 rid=id[((id.sepal_width<(c1-1.5*iq))|(id.sepal_width>(c3+1.5*iq)))]
 rid['sepal_width']
