@@ -162,7 +162,7 @@ sns.boxplot(data=af)
 af=af[((af>=low)&(af<=high))]
 af.dropna()
 
-![MODEL]()
+![MODEL](https://github.com/barathsubramani/ODD2023---Datascience---Ex-02/blob/main/Screenshot%202023-09-01%20195506.png)
 
 sns.boxplot(data=af)
 
