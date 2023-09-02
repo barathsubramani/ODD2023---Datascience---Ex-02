@@ -189,7 +189,7 @@ sns.boxplot(data=df)
 z=np.abs(stats.zscore(df))
 print(df[z['weight']>3])
 
-![MODEL]()
+![MODEL](https://github.com/barathsubramani/ODD2023---Datascience---Ex-02/blob/main/Screenshot%202023-09-01%20221538.png)
 
 val=[12,15,18,21,24,27,30,33,36,39,42,45,48,51,54,57,60,63,69,202,72,75,78,81,84,232,87,90,93,96,99,258]
 out=[]
