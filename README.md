@@ -153,7 +153,7 @@ high
 aq=af[((af>=low)&(af<=high))]
 aq.dropna()
 
-![MODEL]()
+![MODEL](https://github.com/barathsubramani/ODD2023---Datascience---Ex-02/blob/main/Screenshot%202023-09-01%20195443.png)
 
 sns.boxplot(data=af)
 
