@@ -205,7 +205,7 @@ def d_o(val):
 op=d_o(val)
 op
 
-![MODEL]()
+![MODEL](https://github.com/barathsubramani/ODD2023---Datascience---Ex-02/blob/main/Screenshot%202023-09-01%20221523.png)
 
 import pandas as pd
 import numpy as np
