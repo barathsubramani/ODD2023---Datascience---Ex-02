@@ -1,4 +1,6 @@
 # Ex02-Outlier
+
+
 You are given bhp.csv which contains property prices in the city of banglore, India. You need to examine price_per_sqft column and do following,
 
 (1) Remove outliers using IQR
@@ -12,3 +14,237 @@ You are given bhp.csv which contains property prices in the city of banglore, In
 (i) Using IQR detect weight outliers and print them
 
 (ii) Using IQR, detect height outliers and print them
+
+ALGORITHM:
+
+STEP 1:Read the given Data.
+
+STEP 2:Get the information about the data.
+
+STEP 3:Detect the Outliers using IQR method and Z score.
+
+STEP 4:Remove the outliers:
+
+STEP 5:Plot the datas using box plot.
+
+CODE :
+
+S.BARATH
+212222230018
+
+```
+import pandas as pd
+import seaborn as sns
+age = [1,3,28,27,25,92,30,39,40,50,26,24,29,94]
+af=pd.DataFrame(age)
+af
+sns.boxplot(data=af)
+
+sns.scatterplot(data=af)
+
+q1=af.quantile(0.25)
+q2=af.quantile(0.5)
+q3=af.quantile(0.75)
+iqr=q3-q1
+
+low=q1-1.5*iqr
+low
+
+high=q1+1.5*iqr
+high
+
+aq=af[((af>=low)&(af<=high))]
+aq.dropna()
+
+sns.boxplot(data=af)
+
+af=af[((af>=low)&(af<=high))]
+af.dropna()
+
+sns.boxplot(data=af)
+
+sns.scatterplot(data=af)
+
+import pandas as pd
+import numpy as np
+import seaborn as sns
+from scipy import stats
+data = {'weight':[12,15,18,21,24,27,30,33,36,39,42,45,48,51,54,57,60,63,69,202,72,75,78,81,84,232,87,90,93,96,99,258]}
+df=pd.DataFrame(data)
+df
+
+sns.boxplot(data=df)
+
+z=np.abs(stats.zscore(df))
+print(df[z['weight']>3])
+
+val=[12,15,18,21,24,27,30,33,36,39,42,45,48,51,54,57,60,63,69,202,72,75,78,81,84,232,87,90,93,96,99,258]
+out=[]
+def d_o(val):
+  ts=3
+  m=np.mean(val)
+  sd=np.std(val)
+  for i in val:
+    z=(i-m)/sd
+    if np.abs(z)>ts:
+      out.append(i)
+  return out
+op=d_o(val)
+op
+
+import pandas as pd
+import numpy as np
+import seaborn as sns
+from scipy import stats
+id=pd.read_csv("iris.csv")
+id.head()
+
+sns.boxplot(x='sepal_width',data=id)
+
+c1=id.sepal_width.quantile(0.25)
+c3=id.sepal_width.quantile(0.75)
+iq=c3-c1
+print(c3)
+
+rid=id[((id.sepal_width<(c1-1.5*iq))|(id.sepal_width>(c3+1.5*iq)))]
+rid['sepal_width']
+
+delid=id[~((id.sepal_width<(c1-1.5*iq))|(id.sepal_width>(c3+1.5*iq)))]
+delid
+
+sns.boxplot(x='sepal_width',data=delid)
+```
+
+OUTPUT:
+
+import pandas as pd
+import seaborn as sns
+age = [1,3,28,27,25,92,30,39,40,50,26,24,29,94]
+af=pd.DataFrame(age)
+af
+
+![MODEL]()
+
+sns.boxplot(data=af)
+
+![MODEL]()
+
+sns.scatterplot(data=af)
+
+![MODEL]()
+
+q1=af.quantile(0.25)
+q2=af.quantile(0.5)
+q3=af.quantile(0.75)
+iqr=q3-q1
+
+![MODEL]()
+
+low=q1-1.5*iqr
+low
+
+![MODEL]()
+
+high=q1+1.5*iqr
+high
+
+![MODEL]()
+
+aq=af[((af>=low)&(af<=high))]
+aq.dropna()
+
+![MODEL]()
+
+sns.boxplot(data=af)
+
+![MODEL]()
+
+af=af[((af>=low)&(af<=high))]
+af.dropna()
+
+![MODEL]()
+
+sns.boxplot(data=af)
+
+![MODEL]()
+
+sns.scatterplot(data=af)
+
+![MODEL]()
+
+import pandas as pd
+import numpy as np
+import seaborn as sns
+from scipy import stats
+data = {'weight':[12,15,18,21,24,27,30,33,36,39,42,45,48,51,54,57,60,63,69,202,72,75,78,81,84,232,87,90,93,96,99,258]}
+df=pd.DataFrame(data)
+df
+
+![MODEL]()
+
+sns.boxplot(data=df)
+
+![MODEL]()
+
+z=np.abs(stats.zscore(df))
+print(df[z['weight']>3])
+
+![MODEL]()
+
+val=[12,15,18,21,24,27,30,33,36,39,42,45,48,51,54,57,60,63,69,202,72,75,78,81,84,232,87,90,93,96,99,258]
+out=[]
+def d_o(val):
+  ts=3
+  m=np.mean(val)
+  sd=np.std(val)
+  for i in val:
+    z=(i-m)/sd
+    if np.abs(z)>ts:
+      out.append(i)
+  return out
+op=d_o(val)
+op
+
+![MODEL]()
+
+import pandas as pd
+import numpy as np
+import seaborn as sns
+from scipy import stats
+id=pd.read_csv("iris.csv")
+id.head()
+
+![MODEL]()
+
+sns.boxplot(x='sepal_width',data=id)
+
+![MODEL]()
+
+c1=id.sepal_width.quantile(0.25)
+c3=id.sepal_width.quantile(0.75)
+iq=c3-c1
+print(c3)
+
+![MODEL]()
+
+rid=id[((id.sepal_width<(c1-1.5*iq))|(id.sepal_width>(c3+1.5*iq)))]
+rid['sepal_width']
+
+![MODEL]()
+
+delid=id[~((id.sepal_width<(c1-1.5*iq))|(id.sepal_width>(c3+1.5*iq)))]
+delid
+
+![MODEL]()
+
+sns.boxplot(x='sepal_width',data=delid)
+
+
+RESULT :
+
+Thus the outliers are detected and removed in the given file and the final data set is saved into the file.
+
+
+
+
+
