@@ -122,20 +122,20 @@ import seaborn as sns
 age = [1,3,28,27,25,92,30,39,40,50,26,24,29,94]
 af=pd.DataFrame(age)
 af
-
+```
 ![MODEL](https://github.com/barathsubramani/ODD2023---Datascience---Ex-02/blob/main/Screenshot%202023-09-01%20195107.png)
 ```
-```
+
 sns.boxplot(data=af)
 
 ![MODEL](https://github.com/barathsubramani/ODD2023---Datascience---Ex-02/blob/main/Screenshot%202023-09-01%20195214.png)
 ```
-```
+
 sns.scatterplot(data=af)
 
 ![MODEL](https://github.com/barathsubramani/ODD2023---Datascience---Ex-02/blob/main/Screenshot%202023-09-01%20195328.png)
 ```
-```
+
 q1=af.quantile(0.25)
 q2=af.quantile(0.5)
 q3=af.quantile(0.75)
@@ -143,46 +143,46 @@ iqr=q3-q1
 
 ![MODEL](https://github.com/barathsubramani/ODD2023---Datascience---Ex-02/blob/main/Screenshot%202023-09-01%20195355.png)
 ```
-```
+
 low=q1-1.5*iqr
 low
 
 ![MODEL](https://github.com/barathsubramani/ODD2023---Datascience---Ex-02/blob/main/Screenshot%202023-09-01%20195404.png)
 ```
-```
+
 high=q1+1.5*iqr
 high
-
+```
 ![MODEL](https://github.com/barathsubramani/ODD2023---Datascience---Ex-02/blob/main/Screenshot%202023-09-01%20195421.png)
 ```
-```
+
 aq=af[((af>=low)&(af<=high))]
 aq.dropna()
-
+```
 ![MODEL](https://github.com/barathsubramani/ODD2023---Datascience---Ex-02/blob/main/Screenshot%202023-09-01%20195443.png)
 ```
-```
-sns.boxplot(data=af)
 
+sns.boxplot(data=af)
+```
 ![MODEL](https://github.com/barathsubramani/ODD2023---Datascience---Ex-02/blob/main/Screenshot%202023-09-01%20195455.png)
 ```
-```
+
 af=af[((af>=low)&(af<=high))]
 af.dropna()
-
+```
 ![MODEL](https://github.com/barathsubramani/ODD2023---Datascience---Ex-02/blob/main/Screenshot%202023-09-01%20195506.png)
 ```
-```
-sns.boxplot(data=af)
 
+sns.boxplot(data=af)
+```
 ![MODEL](https://github.com/barathsubramani/ODD2023---Datascience---Ex-02/blob/main/Screenshot%202023-09-01%20195519.png)
 ```
-```
-sns.scatterplot(data=af)
 
+sns.scatterplot(data=af)
+```
 ![MODEL](https://github.com/barathsubramani/ODD2023---Datascience---Ex-02/blob/main/Screenshot%202023-09-01%20200214.png)
 ```
-```
+
 import pandas as pd
 import numpy as np
 import seaborn as sns
@@ -190,21 +190,21 @@ from scipy import stats
 data = {'weight':[12,15,18,21,24,27,30,33,36,39,42,45,48,51,54,57,60,63,69,202,72,75,78,81,84,232,87,90,93,96,99,258]}
 df=pd.DataFrame(data)
 df
-
+```
 ![MODEL](https://github.com/barathsubramani/ODD2023---Datascience---Ex-02/blob/main/Screenshot%202023-09-01%20200244.png)
 ```
-```
-sns.boxplot(data=df)
 
+sns.boxplot(data=df)
+```
 ![MODEL](https://github.com/barathsubramani/ODD2023---Datascience---Ex-02/blob/main/Screenshot%202023-09-01%20221437.png)
 ```
-```
+
 z=np.abs(stats.zscore(df))
 print(df[z['weight']>3])
-
+```
 ![MODEL](https://github.com/barathsubramani/ODD2023---Datascience---Ex-02/blob/main/Screenshot%202023-09-01%20221538.png)
 ```
-```
+
 val=[12,15,18,21,24,27,30,33,36,39,42,45,48,51,54,57,60,63,69,202,72,75,78,81,84,232,87,90,93,96,99,258]
 out=[]
 def d_o(val):
@@ -218,42 +218,42 @@ def d_o(val):
   return out
 op=d_o(val)
 op
-
+```
 ![MODEL](https://github.com/barathsubramani/ODD2023---Datascience---Ex-02/blob/main/Screenshot%202023-09-01%20221523.png)
 ```
-```
+
 import pandas as pd
 import numpy as np
 import seaborn as sns
 from scipy import stats
 id=pd.read_csv("iris.csv")
 id.head()
-
+```
 ![MODEL](https://github.com/barathsubramani/ODD2023---Datascience---Ex-02/blob/main/Screenshot%202023-09-01%20221550.png)
 ```
-```
-sns.boxplot(x='sepal_width',data=id)
 
+sns.boxplot(x='sepal_width',data=id)
+```
 ![MODEL](https://github.com/barathsubramani/ODD2023---Datascience---Ex-02/blob/main/Screenshot%202023-09-01%20221605.png)
 ```
-```
+
 c1=id.sepal_width.quantile(0.25)
 c3=id.sepal_width.quantile(0.75)
 iq=c3-c1
 print(c3)
-
+```
 ![MODEL](https://github.com/barathsubramani/ODD2023---Datascience---Ex-02/blob/main/Screenshot%202023-09-01%20221938.png)
 ```
-```
+
 rid=id[((id.sepal_width<(c1-1.5*iq))|(id.sepal_width>(c3+1.5*iq)))]
 rid['sepal_width']
-
+```
 ![MODEL](https://github.com/barathsubramani/ODD2023---Datascience---Ex-02/blob/main/Screenshot%202023-09-01%20221951.png)
 ```
-```
+
 delid=id[~((id.sepal_width<(c1-1.5*iq))|(id.sepal_width>(c3+1.5*iq)))]
 delid
-
+```
 ![MODEL](https://github.com/barathsubramani/ODD2023---Datascience---Ex-02/blob/main/Screenshot%202023-09-01%20222005.png)
 ```
 
